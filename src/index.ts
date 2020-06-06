@@ -50,7 +50,7 @@ async function run() {
     for (let i = 0; i <= TOTAL_USERS; i++) {
         let stringSeed = seedFromNum(i);
         let keys = keyring.addFromUri(stringSeed);
-        let nonce = (await api.query.system.account(keys.address)).nonce.toNumber();
+        let nonce = 0;
         nonces.push(nonce)
     }
     console.log("All nonces fetched!");
